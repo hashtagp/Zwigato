@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
     const [cartItems,setCartItems]=useState({});
     const [token,setToken]=useState("")
     const[food_list,setFoodlist]=useState([])
-    const url="http://localhost:4000"
+    const url="https://zwigato-380e.onrender.com"
 
     const addToCart = async(itemId)=>{
         if(!cartItems[itemId]){
