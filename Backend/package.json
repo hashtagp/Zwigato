@@ -17,6 +17,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "server.js",
+  "type":"commonjs",
   "scripts": {
     "server": "node server.js",
     "start": "node server.js"
