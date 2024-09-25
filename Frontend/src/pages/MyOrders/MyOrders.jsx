@@ -52,7 +52,13 @@ const MyOrders = () => {
                         <p>&#8377;{order.amount}.00</p>
                         <p>Items: {order.items.length}</p>
                         <p><span>&#x25cf;</span><b>{order.status}</b></p>
-                        <button onClick={fetchOrders}>Track order</button>
+                        {
+                            order.payment === "true" ? (
+                                <button onClick={fetchOrders}>Track order</button>
+                                ) : (
+                                <button>Payment failed</button>
+                                )
+                        }
                     </div>
                 )
             })
