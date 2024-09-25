@@ -11,7 +11,7 @@ const Orders = ({url}) => {
   const [orders,setOrders]=useState([]);
 
   const fetchAllOrders=async()=>{
-    const response=await axios.get(`${url}+/api/order/list`);
+    const response=await axios.get(url+"/api/order/list");
     if(response.data.success){
       setOrders(response.data.data);
     }
@@ -22,7 +22,7 @@ const Orders = ({url}) => {
 
 
   const statusHandler=async(event,orderId)=>{
-    const response=await axios.post(`${url}+/api/order/status`,{
+    const response=await axios.post(url+"/api/order/status",{
       orderId,
       status:event.target.value
     })
@@ -55,8 +55,9 @@ const Orders = ({url}) => {
               </p>
               <p className="order-item-name">{order.address.firstName+" "+order.address.lastName}</p>
               <div className="order-item-address">
-              <p >{order.address.street+", "}</p>
-              <p>{order.address.city+", "+order.address.state+", "+order.address.country+", "+order.address.pincode}</p>
+              <p >{order.address.block+", "}</p>
+              <p>{order.address.roomNo}</p>
+              {/* <p>{+", "+order.address.state+", "+order.address.country+", "+order.address.pincode}</p> */}
               </div>
               <p className="order-item-phone">{order.address.phone}</p>
             </div>

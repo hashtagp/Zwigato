@@ -12,7 +12,7 @@ const PlaceOrder = () => {
   const [data,setData]=useState({
     firstName:"",
     lastName:"",
-    email:"",
+    // email:"",
     block:"Administration Block",
     roomNo:"",
     phone:""
@@ -106,7 +106,7 @@ const PlaceOrder = () => {
           </select>
         </div>
         <div className="multi-fields">
-          <input name="RoomNo" type="text" placeholder="Room no" required/>
+          <input name="roomNo" type="text" placeholder="Room no" required/>
         </div>
         <input required  name="phone" onChange={onChangeHandler} value={data.phone} type="tel" pattern="[6-9]{1}[0-9]{9}" placeholder="Phone" />
       </div>
